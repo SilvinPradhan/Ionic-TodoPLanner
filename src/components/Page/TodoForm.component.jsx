@@ -81,6 +81,7 @@ export default function TodoForm(props) {
                                     id="filled-secondary"
                                     label="Add a Todo for the planner"
                                     variant="filled"
+                                    style={{color: "white"}}
                                     color="secondary"
                                     type="text"
                                     value={input}
