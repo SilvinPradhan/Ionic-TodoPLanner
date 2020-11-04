@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -18,6 +18,12 @@ export default function TodoForm(props) {
     const classes = useStyles();
 
     const [input, setInput] = useState("");
+
+    const inputRef = useRef(null)
+
+    useEffect(() => {
+        inputRef.current.focus()
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -53,6 +59,7 @@ export default function TodoForm(props) {
                         name="text"
                         className="todo-input"
                         onChange={handleChange}
+                        ref={inputRef}
                     />
                     <Button
                         style={{ padding: "15px 0px" }}
